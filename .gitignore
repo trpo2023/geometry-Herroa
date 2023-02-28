@@ -1,1 +1,9 @@
+*main
+*..gitignore.swp
+*.exe
+*.swp
+*.out
 *.o
+*.a
+*geometry
+*test
