@@ -13,9 +13,15 @@ int circletest(char *str, float r)
         if(str[i]!=str2[i]){
             flag = 0;
         }
-        if(!flag){return 0;}
+        if(!flag){
+            printf("Error at column 0: expected 'circle'\n");
+            return 0;
+        }
     }
-    if(r<0){return 0;}
+    if(r<0){
+        printf("Error: radius less than zero\n");
+        return 0;
+    }
     return 1;
 }
 
@@ -58,9 +64,6 @@ int main()
             printf("%s %d %d %lf\n", str, p.x, p.y, r);
             if(circletest(str,r)){
                 printf("p = %lf\ns = %lf\n",circle_per(r),circle_area(r));
-            }
-            else{
-                printf("isnt cirlce\n");
             }
         }   
     return 0;
