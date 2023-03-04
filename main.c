@@ -16,10 +16,10 @@ int circletest(char *str, float r)
         if(!flag){
             printf("Error at column 0: expected 'circle'\n");
             return 0;
-        }
+            }
     }
     if(r<0){
-        printf("Error: radius less than zero\n");
+        printf("Error: radius less then zero\n");
         return 0;
     }
     return 1;
@@ -37,19 +37,6 @@ float circle_area(float r){
     s = 3.14*r*r;
     return s;
 }
-
-// int tritest(char *str)
-// {   
-//     char str2[9]="triangle";
-//     int flag = 1;
-//     for(int i=0;i<9;i++){
-//         if(str[i]!=str2[i]){
-//             flag = 0;
-//         }
-//         if(!flag){return 0;}
-//     }
-//     return 2;
-// }
 
 int main()
 {
