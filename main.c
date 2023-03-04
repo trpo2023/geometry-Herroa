@@ -19,28 +19,17 @@ int circletest(char *str, float r)
     return 1;
 }
 
-float circle_per(char *str, float r){
-    if(circletest(str,r)){
-        float p;
-        p = 2*3.14*r;
-        return p;
-    }
-    else{
-        printf("circle doesnt exist\n");
-        return -1.0;
-    }
+float circle_per(float r){
+    float p;
+    p = 2*3.14*r;
+    return p;
+
 }
 
-float circle_area(char *str, float r){
-    if(circletest(str,r)){
-        float s;
-        s = 3.14*r*r;
-        return s;
-    }
-    else{
-        printf("circle doesnt exist\n");
-        return -1.0;
-    }
+float circle_area(float r){
+    float s;
+    s = 3.14*r*r;
+    return s;
 }
 
 // int tritest(char *str)
@@ -63,11 +52,16 @@ int main()
     float r;
     point p;
 
-    myfile = fopen("123.txt","r");
+    myfile = fopen("geometry.txt","r");
     while (
         fscanf(myfile, "%s %d %d %f", str, &p.x, &p.y, &r) != EOF){
             printf("%s %d %d %lf\n", str, p.x, p.y, r);
-            printf("p = %lf\n s = %lf\n",circle_per(str,r),circle_area(str,r));
-        }
+            if(circletest(str,r)){
+                printf("p = %lf\ns = %lf\n",circle_per(r),circle_area(r));
+            }
+            else{
+                printf("isnt cirlce\n");
+            }
+        }   
     return 0;
 }
